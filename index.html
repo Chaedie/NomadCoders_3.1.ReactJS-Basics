@@ -7,7 +7,7 @@
     <title>Document</title>
     <style>
       * {
-        font-size: 30px;
+        font-size: 20px;
       }
     </style>
   </head>
@@ -18,21 +18,49 @@
   <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script type="text/babel">
-    let counter = 10;
-    // function countUp() {
-    //   counter += 1;
-    //   console.log(counter);
-    // }
-
     const App = () => {
-      const [counter, setCounter] = React.useState(0);
-      const onClick = () => {
-        setCounter((current) => current + 1);
+      const [amount, setAmount] = React.useState(0);
+      const [flipped, setFlipped] = React.useState(false);
+      const onChange = (event) => {
+        setAmount(event.target.value);
       };
+      const reset = () => setAmount(0);
+      const onFlip = () => {
+        reset();
+        setFlipped((current) => !current);
+      };
+
       return (
         <div>
-          <span>Total clicks : {counter}</span>
-          <button onClick={onClick}>Click me</button>
+          <h1>Super Converter</h1>
+          <div>
+            <label htmlFor="minutes">Minutes</label>
+            <input
+              value={flipped ? amount * 60 : amount}
+              id="minutes"
+              placeholder="Minutes"
+              type="number"
+              onChange={onChange}
+              disabled={flipped === true}
+            />
+          </div>
+          <div>
+            <h4>you want to convert {amount}</h4>
+            <label htmlFor="hours">Hours</label>
+            <input
+              value={flipped ? amount : (amount / 60).toFixed(2)}
+              id="hours"
+              placeholder="Hours"
+              type="number"
+              onChange={onChange}
+              disabled={flipped === false}
+            />
+          </div>
+          <br />
+          <div>
+            <button onClick={reset}>Reset</button>
+            <button onClick={onFlip}>Flip</button>
+          </div>
         </div>
       );
     };

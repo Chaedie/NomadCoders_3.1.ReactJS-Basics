@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.js": "/NomadCoders_3.ReactJS-Basics/static/js/main.8d2bae4c.js",
-    "index.html": "/NomadCoders_3.ReactJS-Basics/index.html",
-    "main.8d2bae4c.js.map": "/NomadCoders_3.ReactJS-Basics/static/js/main.8d2bae4c.js.map"
+    "main.js": "/nomadcoders-3.reactjs-basics/static/js/main.8d2bae4c.js",
+    "index.html": "/nomadcoders-3.reactjs-basics/index.html",
+    "main.8d2bae4c.js.map": "/nomadcoders-3.reactjs-basics/static/js/main.8d2bae4c.js.map"
   },
   "entrypoints": [
     "static/js/main.8d2bae4c.js"
